@@ -13,7 +13,7 @@ def repeat_all_messages(message):
 	bot.send_message(message.chat.id, message.text)
 
 markup = types.ReplyKeyboardMarkup()
-markup = row('this is buttomn')
+markup.row('this is buttomn')
 bot.send_message(message.chat.id, 'choose...', reply_markup=markup)
 
 
