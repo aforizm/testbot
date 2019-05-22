@@ -123,4 +123,4 @@ dmypy.json
 .pyre/
 
 
-/congif.py
+/config.py
