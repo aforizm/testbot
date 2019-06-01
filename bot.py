@@ -3,6 +3,16 @@ import config
 import telebot
 from telebot import types
 
+'''
+Список переменных которе нужны
+count       - счетчик дней, с момента последнего обнуления
+lastDateRes - дата последнего сброса
+today		- сегодняшняя дата
+maxCount 	- Рекорд дней без сборса счетчика
+
+потом надо бужет сделать переменную  ID пользователя
+'''
+
 
 TOKEN = config.TOKEN
 bot = telebot.TeleBot(TOKEN)
