@@ -19,10 +19,8 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=["start", "help"])
 def start_messages(message):
+	text = "Hello bla bla bla\n" + "/count - Uznat count\n/reset - reset count"
 	bot.send_message(message.chat.id, message.text)
-	print("Hello bla bla bla")
-	print("/count - Uznat count\n/reset - reset count")
-	
 
 if __name__ == '__main__':
 	bot.polling(none_stop = True)
