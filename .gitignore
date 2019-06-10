@@ -1,4 +1,5 @@
 #/config.py
 #/temp.py
+__pycache__/
 /data_file.json
 /mydatabase.db

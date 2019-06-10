@@ -11,15 +11,21 @@ maxCount 	- Рекорд дней без сборса счетчика
 
 Подключить БД и работа с ней.
 '''
+frm = '%Y,%m,%d'
+conn = sqlite3.connect('mydatabase.db')
+c = conn.cursor()
 
+c.execute("select lastDateRes from counts where user=1 ")
+lastDateRes = c.fetchone()
+lastDateRes = datetime.strptime(str(lastDateRes).strip('"(), \''),frm)
+print(lastDateRes)
 
-lastDateRes = datetime(2019,5,19)
-data = {
-	"count": 0,
-	"lastDateRes": '2019,2,2',
-	"today": '2019-06-03',
-	'maxCount': 30
-}
+c.execute("DELETE from counts where user=45")
+
+conn.commit()
+for r in c.execute("SELECT * from counts"):
+	print(r)
+conn.close()
 
 today = datetime.today()
 
@@ -48,6 +54,6 @@ def reset():
 
 
 if __name__ == '__main__':	
-	check()
-	reset()
-	check()
+	'''check()
+				reset()
+				check()'''
