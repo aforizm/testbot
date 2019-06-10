@@ -17,7 +17,7 @@ maxCount 	- Рекорд дней без сборса счетчика
 TOKEN = config.TOKEN
 bot = telebot.TeleBot(TOKEN)
 
-@bot.message_handler(content_types=["start"])
+@bot.message_handler(commands=["start", "help"])
 def start_messages(message):
 	bot.send_message(message.chat.id, message.text)
 	print("Hello bla bla bla")
